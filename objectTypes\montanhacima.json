@@ -1,0 +1,52 @@
+{
+	"name": "MontanhaCima",
+	"plugin-id": "Sprite",
+	"sid": 773112375052061,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 983934066666403
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 108,
+						"height": 239,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9,
+						"collisionPoly": {
+							"points": [
+								0.009259259259259259,
+								0.0041841004184100415,
+								0.9814814814814815,
+								0.0041841004184100415,
+								0.6018518518518523,
+								1
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 356676627573345,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

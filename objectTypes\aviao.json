@@ -1,0 +1,67 @@
+{
+	"name": "Aviao",
+	"plugin-id": "Sprite",
+	"sid": 372470857259184,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 208678756625485
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 151890970959150
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 88,
+						"height": 73,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1,
+						"collisionPoly": {
+							"points": [
+								0.051136363636363674,
+								0.17123287671232884,
+								0.292613636363636,
+								0,
+								0.818181818181818,
+								0,
+								0.9801136363636364,
+								0.2876712328767121,
+								0.9659090909090904,
+								0.9006849315068494,
+								0.6505681818181819,
+								0.9828767123287675,
+								0.23295454545454544,
+								0.8493150684931512,
+								0.005681818181818237,
+								0.2979452054794518
+							]
+						},
+						"duration": 1
+					}
+				],
+				"sid": 941313248890372,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

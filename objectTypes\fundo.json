@@ -1,0 +1,25 @@
+{
+	"name": "Fundo",
+	"plugin-id": "TiledBg",
+	"sid": 346931055729338,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 529930125757241
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 800,
+		"height": 480,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6
+	}
+}

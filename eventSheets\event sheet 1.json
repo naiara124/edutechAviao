@@ -1,0 +1,316 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "EstadoDoJogo",
+			"type": "string",
+			"initialValue": "jogando",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 649367742709501
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 308647333375393,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "Aviao",
+					"sid": 800165708055309,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "0",
+						"y-component": "0"
+					}
+				},
+				{
+					"id": "apply-force",
+					"objectClass": "Aviao",
+					"sid": 339721367857016,
+					"behaviorType": "Physics",
+					"parameters": {
+						"force-x": "0",
+						"force-y": "-400",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 255833152277302
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Fundo",
+					"sid": 699169852246804,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "-800"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Fundo",
+					"sid": 680570943975750,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 669123771263812
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 636181442810212,
+					"parameters": {
+						"interval-seconds": "1.3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 377480642384657,
+					"parameters": {
+						"object-to-create": "MontanhaBaixo",
+						"layer": "0",
+						"x": "821",
+						"y": "random(363, 480)"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 768179879357130,
+					"parameters": {
+						"object-to-create": "MontanhaCima",
+						"layer": "0",
+						"x": "MontanhaBaixo.X",
+						"y": "MontanhaBaixo.Y - 360"
+					}
+				}
+			],
+			"sid": 546210332175714
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Aviao",
+					"sid": 321935928392593,
+					"parameters": {
+						"object": "MontanhaCima"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Aviao",
+					"sid": 338753345859772,
+					"parameters": {
+						"object": "MontanhaBaixo"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Aviao",
+					"sid": 409387808792051,
+					"parameters": {
+						"object": "Chao"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Aviao",
+					"sid": 824734031123274,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 515197988882349,
+					"parameters": {
+						"variable": "EstadoDoJogo",
+						"value": "\"gameover\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "GameOver",
+					"sid": 873369890497584,
+					"parameters": {
+						"x": "350",
+						"y": "160"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "BotaoReiniciar",
+					"sid": 479696302413568,
+					"parameters": {
+						"x": "350",
+						"y": "320"
+					}
+				}
+			],
+			"sid": 261472971719075,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 404497302587515,
+					"parameters": {
+						"variable": "EstadoDoJogo",
+						"comparison": 1,
+						"value": "\"jogando\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "MontanhaBaixo",
+					"sid": 134465713367036,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "MontanhaCima",
+					"sid": 689027217254476,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Fundo",
+					"sid": 827219514510867,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Chao",
+					"sid": 868985783954973,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 830726875339335
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Chao",
+					"sid": 120177647031939,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-404"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Chao",
+					"sid": 118132405005160,
+					"parameters": {
+						"x": "404+795"
+					}
+				}
+			],
+			"sid": 675902974251135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 709477823827536
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object",
+					"objectClass": "TextoReiniciar",
+					"sid": 917830060800557,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "BotaoReiniciar",
+						"mode": "position-angle"
+					}
+				}
+			],
+			"sid": 511601740353087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 773687613969742,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BotaoReiniciar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 536744999580333
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 659023468632769
+				}
+			],
+			"sid": 401481749273403
+		}
+	],
+	"sid": 410837376074444
+}
